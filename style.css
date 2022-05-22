@@ -61,8 +61,34 @@ body {
   box-shadow: -10px 10px rgba(0, 0, 0, 0.25);
   transform-style: preserve-3d;
   perspective: 800px;
+  animation: animate_taxi 2s linear infinite;
+  z-index: 10;
 }
 
+.taxi:nth-child(2) {
+  left: initial;
+  right: 150px;
+  animation: animate_taxi 4s linear infinite;
+  animation-delay: -1s;
+  z-index: 9;
+}
+@keyframes animate_taxi {
+  0% {
+    transform: translateX(20px) translateY(-20px);
+  }
+  25% {
+    transform: translateX(-10px) translateY(0px);
+  }
+  50% {
+    transform: translateX(20px) translateY(20px);
+  }
+  75% {
+    transform: translateX(-10px) translateY(0px);
+  }
+  100% {
+    transform: translateX(20px) translateY(-20px);
+  }
+}
 .taxi::before {
   content: "";
   position: absolute;
